@@ -12,15 +12,15 @@ class App extends Component {
   }
 
 
-componentDidMount(){
-  const todos = this.state.todos
-  if(todos.length === 0){
-    this.setState({todos : []})
-  }else{
-    this.setState({todos : JSON.parse(localStorage.getItem('todos'))})
-  }
+// componentDidMount(){
+//   const todos = this.state.todos
+//   if(todos.length === 0){
+//     this.setState({todos : []})
+//   }else{
+//     this.setState({todos : JSON.parse(localStorage.getItem('todos'))})
+//   }
   
-}
+// }
 
   handleChange =(e)=>{
   
@@ -74,15 +74,15 @@ componentDidMount(){
         <main className=" container mt-5">
           <InputField handlevalue={handleChange} onClick={onSubmit}/>
           
-          <div > 
-                { todos.length === 0 ?
+          <div className="row"> 
+                { todos === null || todos.length === 0 ?
               <div>
                  <h1 className="mt-4">You currently do not have any Task available</h1>
                  <h2 className="mt-4">Add a Task Now!!!</h2>
               </div> :
                 
                   todos.map((todo, index) =>
-                    <div className="todo" key={index}>
+                    <div className="todo col-md-3 m-4 " key={index}>
                          <p>{todo}</p>
                         <button className=" btn-todo-delete" onClick={()=>handleDelete(index) }>Delete</button>
                     </div>
