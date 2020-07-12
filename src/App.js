@@ -8,19 +8,15 @@ class App extends Component {
   state = {
 
     value : '',
-    todos : JSON.parse(localStorage.getItem('todos'))
+    todos : []
   }
 
 
-// componentDidMount(){
-//   const todos = this.state.todos
-//   if(todos.length === 0){
-//     this.setState({todos : []})
-//   }else{
-//     this.setState({todos : JSON.parse(localStorage.getItem('todos'))})
-//   }
-  
-// }
+componentDidMount(){
+
+    this.setState({todos : JSON.parse(localStorage.getItem('todos'))})
+
+}
 
   handleChange =(e)=>{
   
