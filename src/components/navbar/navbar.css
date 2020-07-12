@@ -1,0 +1,16 @@
+.navbar{
+    background-color:rgb(65, 38, 38);
+    color:white;
+    position: fixed;
+    
+    
+   
+}
+
+h1{
+    
+    width:70%;
+    margin:0 auto;
+    font-family: cursive;
+    font-weight: bolder;
+}

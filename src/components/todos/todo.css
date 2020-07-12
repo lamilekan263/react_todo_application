@@ -1,0 +1,28 @@
+p{
+    list-style-type: none;
+    color:#fff;
+    font-size:1.2em;
+    margin-bottom: 30px;
+    font-family:monospace;
+}
+.todo{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:30px;
+    margin-top:10px;
+    border-radius:10px;
+}
+.todo:nth-child(odd){
+    background-color:#979494;
+}
+.todo:nth-child(even){
+    background-color:#242222; 
+}
+.btn-todo-delete{
+    color:white;
+    background-color:rgb(189, 172, 172);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    outline: none;
+}
