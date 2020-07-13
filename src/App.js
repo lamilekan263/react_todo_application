@@ -28,7 +28,6 @@ componentDidMount(){
     const value = this.state.value;
     const todos = this.state.todos;
 
-
     if(localStorage.getItem('todos') === null){
            
       let todos = []
@@ -36,6 +35,7 @@ componentDidMount(){
       localStorage.setItem('todos', JSON.stringify(todos))
   }else{
       // todos = JSON.parse(localStorage.getItem('todos'))
+   
       todos.push(value)
       localStorage.setItem('todos' , JSON.stringify(todos))
       
