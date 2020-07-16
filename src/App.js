@@ -25,6 +25,9 @@ componentDidMount(){
   }
   onSubmit= (e) =>{
     e.preventDefault()
+    if(e.target.value === " "){
+      console.log('no')
+    }
     const value = this.state.value;
     const todos = this.state.todos;
 
@@ -43,7 +46,7 @@ componentDidMount(){
   this.setState({
       myTodos : JSON.parse(localStorage.getItem('todos')),
       value: '',
-      e : ''
+      
   })
   
   }
