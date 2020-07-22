@@ -25,39 +25,30 @@ componentDidMount(){
   }
   onSubmit= (e) =>{
     e.preventDefault()
-    if(e.target.value === " "){
-      console.log('no')
-    }
+    
     const value = this.state.value;
     const todos = this.state.todos;
-
+    
     if(localStorage.getItem('todos') === null){
-           
       let todos = []
       todos.push(value);
       localStorage.setItem('todos', JSON.stringify(todos))
-  }else{
-      // todos = JSON.parse(localStorage.getItem('todos'))
-   
+  }else{   
       todos.push(value)
       localStorage.setItem('todos' , JSON.stringify(todos))
       
   }
   this.setState({
-      myTodos : JSON.parse(localStorage.getItem('todos')),
+      todos : JSON.parse(localStorage.getItem('todos')),
       value: '',
-      
-  })
+  });
   
   }
   handleDelete=(index)=>{
-    
-    // const todos = this.state.todos;
     var list = JSON.parse(localStorage.getItem('todos'))
     list.splice(index, 1)
     this.setState({ todos : list})
     localStorage.setItem('todos',JSON.stringify(list))
-
   }
  
   render() {
@@ -71,7 +62,7 @@ componentDidMount(){
           <NavBar />
         
         <main className=" container mt-5">
-          <InputField handlevalue={handleChange} onClick={onSubmit}/>
+          <InputField handlevalue={handleChange} onClick={onSubmit} required/>
           
           <div className="row"> 
                 { todos === null || todos.length === 0 ?
@@ -79,7 +70,6 @@ componentDidMount(){
                  <h1 className="mt-4">You currently do not have any Task available</h1>
                  <h2 className="mt-4">Add a Task Now!!!</h2>
               </div> :
-                
                   todos.map((todo, index) =>
                     <div className="todo col-md-3 m-4 " key={index}>
                          <p>{todo}</p>
