@@ -39,11 +39,11 @@ componentDidMount(){
       localStorage.setItem('todos' , JSON.stringify(todos))
       
   }
-    this.setState({
-    todos : JSON.parse(localStorage.getItem('todos')),
-    value: '',
-});
+  if(this.state.text === ''){
+    this.props.setAlert('Please  enter something', 'light')
+}else{
 
+}
 
   
   }
@@ -56,7 +56,7 @@ componentDidMount(){
  
   render() {
     
-    const {todos, value} = this.state 
+    const {todos} = this.state 
     const {handleChange, onSubmit, handleDelete} = this
     
     return ( 
@@ -65,7 +65,7 @@ componentDidMount(){
           <NavBar />
         
         <main className=" container mt-5">
-          <InputField handlevalue={handleChange} onClick={onSubmit}myVal ={ value } required/>
+          <InputField handlevalue={handleChange} onClick={onSubmit} required/>
           
           <div className="row"> 
                 { todos === null || todos.length === 0 ?

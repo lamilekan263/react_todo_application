@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css'
 
+import { ThemeProvider } from "@chakra-ui/core";
 
+const ThemedApp = () => <ThemeProvider> <App /> </ThemeProvider>;
 ReactDOM.render(
   <React.StrictMode>
+    <ThemedApp>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

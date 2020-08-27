@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class InputField extends Component {
     
     render() { 
-        const {onClick, handlevalue, myVal} = this.props
+        const {onClick, handlevalue} = this.props
         return ( 
             <div>
                 <form >

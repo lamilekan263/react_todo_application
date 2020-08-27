@@ -56,7 +56,7 @@ componentDidMount(){
  
   render() {
     
-    const {todos, value} = this.state 
+    const {todos} = this.state 
     const {handleChange, onSubmit, handleDelete} = this
     
     return ( 
