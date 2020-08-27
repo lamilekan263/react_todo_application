@@ -55,11 +55,24 @@ componentDidMount(){
   }
  
   render() {
+    const options = {
+      timeZone:"Africa/Accra",
+      hour12 : true,
+      hour:  "2-digit",
+      minute: "2-digit",
+     second: "2-digit"
+   };
+
+
+    
     const {todos, value} = this.state 
-    const {handleChange, onSubmit, handleDelete} = this 
+    const {handleChange, onSubmit, handleDelete} = this
+    
     return ( 
+      
       <div>
           <NavBar />
+        
         <main className=" container mt-5">
           <InputField handlevalue={handleChange} onClick={onSubmit}myVal ={ value } required/>
           

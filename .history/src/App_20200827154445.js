@@ -55,11 +55,24 @@ componentDidMount(){
   }
  
   render() {
+    const options = {
+      timeZone:"Africa/Accra",
+      hour12 : true,
+      hour:  "2-digit",
+      minute: "2-digit",
+     second: "2-digit"
+   };
+
+new Date().toLocaleTimeString("en-US",options);
+    
     const {todos, value} = this.state 
-    const {handleChange, onSubmit, handleDelete} = this 
+    const {handleChange, onSubmit, handleDelete} = this
+    
     return ( 
+      
       <div>
           <NavBar />
+        
         <main className=" container mt-5">
           <InputField handlevalue={handleChange} onClick={onSubmit}myVal ={ value } required/>
           
@@ -72,6 +85,8 @@ componentDidMount(){
                   todos.map((todo, index) =>
                     <div className="todo col-md-3 m-4 " key={index}>
                          <p>{todo}</p>
+                         <p>Date Created: { new Date().toLocaleDateString("en-US",options)}</p>
+                         
                         <button className=" btn-todo-delete" onClick={()=>handleDelete(index) }>Delete</button>
                     </div>
                 )}

@@ -60,6 +60,7 @@ componentDidMount(){
     return ( 
       <div>
           <NavBar />
+        
         <main className=" container mt-5">
           <InputField handlevalue={handleChange} onClick={onSubmit}myVal ={ value } required/>
           
